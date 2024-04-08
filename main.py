@@ -1,7 +1,7 @@
 import psycopg2
 
 def create_db(conn):
-    
+
     cursor = conn.cursor()
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS clients (
@@ -87,7 +87,7 @@ def find_client(conn, first_name=None, last_name=None, email=None, phone=None):
     return result
 
 
-with psycopg2.connect(database="clients_db", user="postgres", password="7Ff3imRYmE") as conn:
+with psycopg2.connect(database="clients_db", user="postgres", password="postgres") as conn:
     create_db(conn)
     
     add_client(conn, "John", "Doe", "johndoe@example.com", ["123456789", "987654321"])
